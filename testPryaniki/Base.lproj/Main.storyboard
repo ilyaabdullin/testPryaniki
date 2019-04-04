@@ -1,24 +1,235 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u1P-FX-lWw">
+    <device id="retina6_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Pryaniky View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PryanikyViewController" customModule="testPryaniki" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2c-LX-jdW">
+                                <rect key="frame" x="82" y="423" width="250" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="DOE-IU-AF7"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="fTK-cn-pW0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Загрузить данные"/>
+                                <connections>
+                                    <action selector="getPryanikData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Km9-EV-Cnn"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ylp-jZ-Mxd">
+                                <rect key="frame" x="197" y="326" width="20" height="20"/>
+                                <color key="color" cocoaTouchSystemColor="darkTextColor"/>
+                            </activityIndicatorView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egx-1p-IHa">
+                                <rect key="frame" x="10" y="539.66666666666663" width="394" height="40.666666666666629"/>
+                                <string key="text">Не удалось загрузить данные
+Попробуйте еще раз</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="d2c-LX-jdW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1YN-1N-266"/>
+                            <constraint firstItem="d2c-LX-jdW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="52N-gx-j2L"/>
+                            <constraint firstItem="egx-1p-IHa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.25" id="DLl-MO-jEF"/>
+                            <constraint firstItem="ylp-jZ-Mxd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.75" id="E6P-iK-aAr"/>
+                            <constraint firstItem="egx-1p-IHa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Tqu-lV-deQ"/>
+                            <constraint firstItem="egx-1p-IHa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="g9E-hQ-aui"/>
+                            <constraint firstItem="ylp-jZ-Mxd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gAH-WR-hFQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="j1E-vC-qbc"/>
+                    <connections>
+                        <outlet property="errorLoadJSONDataLabel" destination="egx-1p-IHa" id="gGW-bH-XPk"/>
+                        <outlet property="getDataActivityIndicator" destination="ylp-jZ-Mxd" id="fG0-IY-Ah4"/>
+                        <outlet property="getDataButton" destination="d2c-LX-jdW" id="1q6-WV-efS"/>
+                        <segue destination="HSk-tt-8eX" kind="show" identifier="toPryanikyDataTVC" id="nOK-cy-4ZY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1820.289855072464" y="282.58928571428572"/>
+        </scene>
+        <!--Pryaniky Data Table View Controller-->
+        <scene sceneID="9Bk-ds-l9M">
+            <objects>
+                <tableViewController id="HSk-tt-8eX" customClass="PryanikyDataTableViewController" customModule="testPryaniki" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="j8M-mi-H5a">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="pryanikyDataReusableCell" textLabel="ZOb-qU-gNo" detailTextLabel="Jv9-Kd-5f2" style="IBUITableViewCellStyleSubtitle" id="sfC-sm-6tX">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sfC-sm-6tX" id="gUI-Lk-1GP">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZOb-qU-gNo">
+                                            <rect key="frame" x="20.000000000000004" y="5" width="33.333333333333336" height="20.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jv9-Kd-5f2">
+                                            <rect key="frame" x="19.999999999999996" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="HSk-tt-8eX" id="b51-6N-OJk"/>
+                            <outlet property="delegate" destination="HSk-tt-8eX" id="aVz-cg-nKj"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="oCR-09-1Ob" kind="show" identifier="toSimpleLabelView" id="KGn-a4-0YS"/>
+                        <segue destination="8x5-XW-NTe" kind="show" identifier="toPictureView" id="Giw-iu-JcB"/>
+                        <segue destination="75p-k0-cSV" kind="show" identifier="toSelectorView" id="5G8-N3-3bd"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v1m-rs-gpY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2571.0144927536235" y="282.58928571428572"/>
+        </scene>
+        <!--Pryaniky Simple Text View Controller-->
+        <scene sceneID="Uyy-hK-5xR">
+            <objects>
+                <viewController id="oCR-09-1Ob" customClass="PryanikySimpleTextViewController" customModule="testPryaniki" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ert-lC-IAW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SN5-0T-W1C">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vhA-ri-V98" firstAttribute="trailing" secondItem="SN5-0T-W1C" secondAttribute="trailing" id="d02-AF-MhI"/>
+                            <constraint firstItem="SN5-0T-W1C" firstAttribute="leading" secondItem="vhA-ri-V98" secondAttribute="leading" id="eM1-Bv-Vkx"/>
+                            <constraint firstItem="vhA-ri-V98" firstAttribute="bottom" secondItem="SN5-0T-W1C" secondAttribute="bottom" id="h2y-dn-0nR"/>
+                            <constraint firstItem="SN5-0T-W1C" firstAttribute="top" secondItem="vhA-ri-V98" secondAttribute="top" id="mPY-X0-CjI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vhA-ri-V98"/>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="SN5-0T-W1C" id="Ui2-sm-urX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IQg-MQ-SdE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3351" y="156"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="att-Xb-xQD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="u1P-FX-lWw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AyT-zC-pi4">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ZGU-4Z-wmF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bmf-ch-4C5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="913.04347826086962" y="282.58928571428572"/>
+        </scene>
+        <!--Pryaniky Picture View Controller-->
+        <scene sceneID="L46-ca-ns6">
+            <objects>
+                <viewController id="8x5-XW-NTe" customClass="PryanikyPictureViewController" customModule="testPryaniki" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NiK-za-lSO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Ps-WA-bKw">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="DrF-QX-Cwa">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DrF-QX-Cwa" firstAttribute="centerY" secondItem="NiK-za-lSO" secondAttribute="centerY" id="Kiw-MX-v2D"/>
+                            <constraint firstItem="4Ps-WA-bKw" firstAttribute="leading" secondItem="mdS-9O-inx" secondAttribute="leading" id="cZQ-CN-uK7"/>
+                            <constraint firstItem="DrF-QX-Cwa" firstAttribute="centerX" secondItem="NiK-za-lSO" secondAttribute="centerX" id="hcH-rF-IUv"/>
+                            <constraint firstItem="mdS-9O-inx" firstAttribute="bottom" secondItem="4Ps-WA-bKw" secondAttribute="bottom" id="kfp-hZ-Dn7"/>
+                            <constraint firstItem="mdS-9O-inx" firstAttribute="trailing" secondItem="4Ps-WA-bKw" secondAttribute="trailing" id="opJ-7U-x6N"/>
+                            <constraint firstItem="4Ps-WA-bKw" firstAttribute="top" secondItem="mdS-9O-inx" secondAttribute="top" id="uOm-Ks-aFa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mdS-9O-inx"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="DrF-QX-Cwa" id="9Qd-dQ-Sgv"/>
+                        <outlet property="imageView" destination="4Ps-WA-bKw" id="pIc-P1-4qy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TXd-7O-RTA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3474" y="248"/>
+        </scene>
+        <!--Pryaniky Selector View Controller-->
+        <scene sceneID="V3G-Ur-gjd">
+            <objects>
+                <viewController id="75p-k0-cSV" customClass="PryanikySelectorViewController" customModule="testPryaniki" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ltN-uM-IyV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VgE-us-cq8">
+                                <rect key="frame" x="0.0" y="340" width="414" height="216"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VgE-us-cq8" firstAttribute="centerY" secondItem="ltN-uM-IyV" secondAttribute="centerY" id="4Dd-ce-OvU"/>
+                            <constraint firstItem="VgE-us-cq8" firstAttribute="leading" secondItem="lPo-jN-s9c" secondAttribute="leading" id="6fJ-Yl-3t4"/>
+                            <constraint firstItem="VgE-us-cq8" firstAttribute="centerX" secondItem="ltN-uM-IyV" secondAttribute="centerX" id="LZL-eE-jSC"/>
+                            <constraint firstItem="VgE-us-cq8" firstAttribute="trailing" secondItem="lPo-jN-s9c" secondAttribute="trailing" id="mxO-kt-SCt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lPo-jN-s9c"/>
+                    </view>
+                    <connections>
+                        <outlet property="picker" destination="VgE-us-cq8" id="MCd-Dl-3za"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rem-Ds-J7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3620" y="350"/>
         </scene>
     </scenes>
 </document>

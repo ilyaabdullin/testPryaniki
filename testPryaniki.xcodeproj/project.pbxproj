@@ -8,20 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		2C9377A722561AB700EE617E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9377A622561AB700EE617E /* AppDelegate.swift */; };
-		2C9377A922561AB700EE617E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9377A822561AB700EE617E /* ViewController.swift */; };
+		2C9377A922561AB700EE617E /* PryanikyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9377A822561AB700EE617E /* PryanikyViewController.swift */; };
 		2C9377AC22561AB700EE617E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C9377AA22561AB700EE617E /* Main.storyboard */; };
 		2C9377AE22561ABC00EE617E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C9377AD22561ABC00EE617E /* Assets.xcassets */; };
 		2C9377B122561ABC00EE617E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C9377AF22561ABC00EE617E /* LaunchScreen.storyboard */; };
+		2C9377BB22561B6200EE617E /* PryanikyDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9377BA22561B6200EE617E /* PryanikyDataTableViewController.swift */; };
+		2C9377BE22561D4800EE617E /* pryanikyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9377BD22561D4800EE617E /* pryanikyData.swift */; };
+		2C9377C0225652AD00EE617E /* PryanikySimpleTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9377BF225652AD00EE617E /* PryanikySimpleTextViewController.swift */; };
+		2C9377C22256669700EE617E /* PryanikyPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9377C12256669700EE617E /* PryanikyPictureViewController.swift */; };
+		2C9377C42256773E00EE617E /* PryanikySelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9377C32256773E00EE617E /* PryanikySelectorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2C9377A322561AB700EE617E /* testPryaniki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testPryaniki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C9377A622561AB700EE617E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2C9377A822561AB700EE617E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2C9377A822561AB700EE617E /* PryanikyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PryanikyViewController.swift; sourceTree = "<group>"; };
 		2C9377AB22561AB700EE617E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2C9377AD22561ABC00EE617E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C9377B022561ABC00EE617E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C9377B222561ABC00EE617E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C9377BA22561B6200EE617E /* PryanikyDataTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PryanikyDataTableViewController.swift; sourceTree = "<group>"; };
+		2C9377BD22561D4800EE617E /* pryanikyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pryanikyData.swift; sourceTree = "<group>"; };
+		2C9377BF225652AD00EE617E /* PryanikySimpleTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PryanikySimpleTextViewController.swift; sourceTree = "<group>"; };
+		2C9377C12256669700EE617E /* PryanikyPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PryanikyPictureViewController.swift; sourceTree = "<group>"; };
+		2C9377C32256773E00EE617E /* PryanikySelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PryanikySelectorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +64,43 @@
 		2C9377A522561AB700EE617E /* testPryaniki */ = {
 			isa = PBXGroup;
 			children = (
-				2C9377A622561AB700EE617E /* AppDelegate.swift */,
-				2C9377A822561AB700EE617E /* ViewController.swift */,
 				2C9377AA22561AB700EE617E /* Main.storyboard */,
-				2C9377AD22561ABC00EE617E /* Assets.xcassets */,
-				2C9377AF22561ABC00EE617E /* LaunchScreen.storyboard */,
+				2C9377BC22561BE700EE617E /* Model */,
+				2C9377B922561B1800EE617E /* Controller */,
 				2C9377B222561ABC00EE617E /* Info.plist */,
+				2C9377B822561AF400EE617E /* Supporting Files */,
 			);
 			path = testPryaniki;
+			sourceTree = "<group>";
+		};
+		2C9377B822561AF400EE617E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2C9377A622561AB700EE617E /* AppDelegate.swift */,
+				2C9377AD22561ABC00EE617E /* Assets.xcassets */,
+				2C9377AF22561ABC00EE617E /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2C9377B922561B1800EE617E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2C9377A822561AB700EE617E /* PryanikyViewController.swift */,
+				2C9377BA22561B6200EE617E /* PryanikyDataTableViewController.swift */,
+				2C9377BF225652AD00EE617E /* PryanikySimpleTextViewController.swift */,
+				2C9377C12256669700EE617E /* PryanikyPictureViewController.swift */,
+				2C9377C32256773E00EE617E /* PryanikySelectorViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2C9377BC22561BE700EE617E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2C9377BD22561D4800EE617E /* pryanikyData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +174,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C9377A922561AB700EE617E /* ViewController.swift in Sources */,
+				2C9377C22256669700EE617E /* PryanikyPictureViewController.swift in Sources */,
+				2C9377A922561AB700EE617E /* PryanikyViewController.swift in Sources */,
+				2C9377BB22561B6200EE617E /* PryanikyDataTableViewController.swift in Sources */,
+				2C9377C42256773E00EE617E /* PryanikySelectorViewController.swift in Sources */,
+				2C9377C0225652AD00EE617E /* PryanikySimpleTextViewController.swift in Sources */,
+				2C9377BE22561D4800EE617E /* pryanikyData.swift in Sources */,
 				2C9377A722561AB700EE617E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
